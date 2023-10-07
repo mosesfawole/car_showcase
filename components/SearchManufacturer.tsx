@@ -50,7 +50,27 @@ const SearchManufacturer = ({
             leaveTo="opacity-0"
             afterLeave={() => setQuery("")}
           >
-            <Combobox.Options></Combobox.Options>
+            <Combobox.Options>
+              {filteredManufacurers.length === 0 && query !== "" ? (
+                <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
+                  Nothing found.
+                </div>
+              ) : (
+                filteredManufacurers.map((item) => (
+                  <Combobox.Option
+                    key={item}
+                    value={item}
+                    className={({ active }) =>
+                      `relative search-manufacturer__option ${
+                        active ? "bg-primary-blue" : "text-gray-900"
+                      }`
+                    }
+                  >
+                    {item}
+                  </Combobox.Option>
+                ))
+              )}
+            </Combobox.Options>
           </Transition>
         </div>
       </Combobox>
