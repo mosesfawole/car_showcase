@@ -43,6 +43,7 @@ export default function Home() {
 
   useEffect(() => {
     getCars();
+    console.log(fuel, year, manufacturer, model, limit);
   }, [fuel, year, manufacturer, model, limit]);
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
@@ -75,7 +76,7 @@ export default function Home() {
               ))}
             </div>
             {loading && (
-              <div className="mt-16 w-full flex-center">
+              <div className="">
                 <Image
                   src="/loader.svg"
                   alt="loader"
