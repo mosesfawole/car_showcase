@@ -1,9 +1,7 @@
 "use client";
 
 import { ShowMoreProps } from "@/types";
-import { useRouter } from "next/navigation";
 import { CustomButton } from ".";
-import { updateSearchPrams } from "@/utils";
 
 const ShowMore = ({ pageNumber, isNext, setLimit }: ShowMoreProps) => {
   const handleNavigation = () => {
